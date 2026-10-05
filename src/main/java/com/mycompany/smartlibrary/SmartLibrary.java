@@ -111,7 +111,7 @@ public class SmartLibrary {
                     } else {
                         System.out.println("Maaf, kapasitas rak buku sudah penuh!");
                     }
-                
+                    break;
                 case 2:
                     System.out.println("\n--- Daftar Buku di Perpustakaan ---");
                     if (jumlahKoleksi == 0) {
@@ -120,16 +120,15 @@ public class SmartLibrary {
                         for (int i = 0; i < jumlahKoleksi; i++) {
                             System.out.print((i + 1) + ". ");
                             daftarKoleksi[i].tampilkanInfo();
-                            daftarKoleksi[i].caraPinjam();
-                            System.out.println();
+                            simulasiPinjam(daftarKoleksi[i]);
+                            System.out.println("");
                         }
                             
-                        // Memanggil Variabel STATIC dari class Koleksi
                         System.out.println("\n* Total Buku Fisik yang Terdaftar: " + Koleksi.totalKoleksiBerhasilDibuat);
                     }
                     System.out.print("Tekan Enter untuk melanjutkan...");
                     scanner.nextLine(); 
-                
+                    break;
                 case 3:
                     System.out.println("\n-- Fitur Cari Buku --");
                     System.out.println("1. Cari berdasarkan Judul Teks (String)");
@@ -153,11 +152,11 @@ public class SmartLibrary {
                         
                     System.out.print("Tekan Enter untuk melanjutkan...");
                     scanner.nextLine();
-                
+                    break;
                 case 4:
                     System.out.println("Terima kasih telah menggunakan Smart Library!");
                     isRunning = false;
-             
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid. Silahkan masukkan angka 1-4.");
                     scanner.nextLine();
