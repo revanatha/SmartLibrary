@@ -8,7 +8,7 @@ package com.mycompany.smartlibrary;
  *
  * @author Talitha Reva Nabila
  */
-public class Majalah extends Koleksi{
+public class Majalah extends Koleksi implements DapatDipinjam {
     private String edisi;
 
     public Majalah(String judul, String pengarang, int tahunTerbit, String edisi) {
@@ -26,6 +26,16 @@ public class Majalah extends Koleksi{
     @Override
     public void caraPinjam(){
         System.out.println("info pinjam -> Maajalah terbitan terbareu hanya dapat dibaca di ruang baca untuk tidak dibawa pulang");
+    }
+    
+    @Override
+    public void hitungDendaKeterlambatan() {
+        System.out.println("-> Aturan Denda: Rp 5.000 / hari (Majalah sangat dilarang dibawa pulang!)");
+    }
+    
+    @Override
+    public void prosesPinjamFisik() {
+        System.out.println("-> [PROSES] Anggota menyerahkan KTM untuk membaca Majalah fisik di Ruang Baca.");
     }
       
 }

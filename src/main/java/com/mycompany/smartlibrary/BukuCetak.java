@@ -9,7 +9,7 @@ package com.mycompany.smartlibrary;
  * @author Talitha Reva Nabila
  */
 
-public class BukuCetak extends Koleksi {
+public class BukuCetak extends Koleksi implements DapatDipinjam, DapatDinilai {
     private int jumlahHalaman;
     
     public BukuCetak(String judul, String pengarang, int tahunTerbit, int jumlahHalaman) {
@@ -26,5 +26,20 @@ public class BukuCetak extends Koleksi {
     @Override
     public void caraPinjam() {
         System.out.println("-> Info Pinjam: Buku cetak wajib diambil fisik bukunya di meja administrasi perpustakaan.");
+    }
+    
+    @Override
+    public void hitungDendaKeterlambatan() {
+        System.out.println("-> Aturan Denda: Rp 2.000 / hari keterlambatan");
+    }
+    
+    @Override
+    public void prosesPinjamFisik() {
+        System.out.println("-> [PROSES] Anggota menyerahkan KTM untuk membaca Majalah fisik di Ruang Baca.");
+    }
+    
+    @Override
+    public void beriRating(int bintang) {
+        System.out.println("-> [ULASAN BUKU] Buku fisik ini mendapat rating " + bintang + "/5 Bintang.");
     }
 }

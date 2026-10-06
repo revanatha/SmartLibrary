@@ -9,7 +9,7 @@ package com.mycompany.smartlibrary;
  * @author Talitha Reva Nabila
  */
 
-public class Koleksi {
+public abstract class Koleksi {
     protected String judul;
     protected String pengarang;
     protected int tahunTerbit;
@@ -34,4 +34,6 @@ public class Koleksi {
     public void caraPinjam() {
         System.out.println("Barang dipinjam secara fisik ke meja administrasi.");
     }
+    
+    public abstract void hitungDendaKeterlambatan();
 }

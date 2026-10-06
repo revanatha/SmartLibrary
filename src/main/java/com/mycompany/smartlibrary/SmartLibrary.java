@@ -121,6 +121,16 @@ public class SmartLibrary {
                             System.out.print((i + 1) + ". ");
                             daftarKoleksi[i].tampilkanInfo();
                             simulasiPinjam(daftarKoleksi[i]);
+                            
+                            daftarKoleksi[i].hitungDendaKeterlambatan();
+                            if (daftarKoleksi[i] instanceof DapatDipinjam) {
+                                DapatDipinjam itemFisik = (DapatDipinjam) daftarKoleksi[i];
+                                itemFisik.prosesPinjamFisik();
+                            }
+                            if (daftarKoleksi[i] instanceof DapatDinilai) {
+                                DapatDinilai itemBisaDinilai = (DapatDinilai) daftarKoleksi[i];
+                                itemBisaDinilai.beriRating(5);
+                            }
                             System.out.println("");
                         }
                             
